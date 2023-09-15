@@ -1,0 +1,19 @@
+{
+    "name": "Supermenu lookup",
+    "version": "1.0",
+    "manifest_version": 3,
+    "description": "Lookup of given ingredient in all food options",
+    "permissions": [
+        "activeTab"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://panel.supermenu.com.pl/*"
+            ],
+            "js": [
+                "lookup.js"
+            ]
+        }
+    ]
+}
