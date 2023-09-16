@@ -1,5 +1,5 @@
 var searchPopup = document.createElement("div");
-searchPopup.innerHTML = '<div class="meal-details-popper" data-popper-reference-hidden="false" data-popper-escaped="false" data-popper-placement="left" style="position: absolute; inset: 0px 0px auto auto; transform: translate(-669px, 668px);"> <div class="meal-details"> <div class="details-exit"><i class="fal fa-times"></i></div><div class="details-name spacer-bottom-24"> <p class="text-h3 text-h3--meal-name">Podaj składnik</p><input type="text" placeholder="koperek" id="ingredient-input"> <button id="ingredient-submit">Szukaj</button> </div></div>';
+searchPopup.innerHTML = '<div class="meal-details-popper" data-popper-reference-hidden="false" data-popper-escaped="false" data-popper-placement="left" style="position: absolute; inset: 0px 0px auto auto; transform: translate(-669px, 668px);"> <div class="meal-details"> <div id="details-exit" style="position: absolute; top: 16px; right: 18px; width: 30px; cursor: pointer;"><i class="fal fa-times"></i></div><div class="details-name spacer-bottom-24"> <p class="text-h3 text-h3--meal-name">Podaj składnik</p><input type="text" placeholder="koperek" id="ingredient-input"> <button id="ingredient-submit">Szukaj</button> </div></div>';
 searchPopup.id = "search-popup";
 
 const sleep = (ms) => {
@@ -8,7 +8,7 @@ const sleep = (ms) => {
 
 const showSearchPopup = () => {
     document.getElementsByClassName("card-header")[0].append(searchPopup);
-    document.getElementsByClassName("details-exit")[0].onclick = () => { document.getElementById("search-popup").remove() };
+    document.getElementById("details-exit").onclick = () => { document.getElementById("search-popup").remove() };
     document.getElementById("ingredient-submit").onclick = () => {
         let ingredient = document.getElementById("ingredient-input").value
         searchIngredient(ingredient)
@@ -46,5 +46,4 @@ setTimeout(() => {
     buttonPopup.onclick = showSearchPopup;
 
     document.getElementById("app").appendChild(buttonPopup)  
-}, "5000");
-
+}, "2000");
